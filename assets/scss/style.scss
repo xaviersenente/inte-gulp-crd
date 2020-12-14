@@ -1,0 +1,48 @@
+/*   
+Theme Name: crdtheme
+Description: Thème du Conservatoire de Belfort
+Author: Xavier SENENTE
+*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,700;1,300;1,700&family=Space+Mono:ital@0;1&display=swap');
+
+// Vendors
+@import "partials/vendors/normalize";
+@import "partials/vendors/headroom";
+@import "partials/vendors/flickity";
+
+// Utils
+@import "partials/utils/functions";
+@import "partials/utils/variables";
+@import "partials/utils/mixins";
+
+// Base
+@import "partials/base/main";
+@import "partials/base/icons";
+@import "partials/base/media";
+
+// Components
+@import "partials/components/menu";
+@import "partials/components/buttons";
+@import "partials/components/hero";
+@import "partials/components/card";
+@import "partials/components/carousel";
+@import "partials/components/map";
+@import "partials/components/searchform";
+@import "partials/components/search";
+@import "partials/components/showgrid";
+
+// Layout
+@import "partials/layout/grid";
+@import "partials/layout/header";
+@import "partials/layout/footer";
+@import "partials/layout/forms";
+@import "partials/layout/sections";
+
+// Pages
+@import "partials/pages/single";
+
+// Wordpress
+@import "partials/wp/contact-form";
+@import "partials/wp/gutenberg";
+@import "partials/wp/pagination";
+@import "partials/wp/cookie-notice";

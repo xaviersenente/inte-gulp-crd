@@ -1,0 +1,31 @@
+// Fonction pour convertir des valeurs de px en rem
+@function pxToRem($pixels) {
+  @return #{$pixels / 16 }rem;
+}
+
+// Fonction pour renvoyer une variable CSS 
+@function color($color-name) {
+  @return var(--#{$color-name});
+}
+
+// Fonction qui permet de retourner une valeur sans son unité de mesure
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// Système de Breakpoint repris de Bootstrap
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .02, null);
+}

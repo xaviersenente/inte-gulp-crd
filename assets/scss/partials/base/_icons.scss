@@ -1,0 +1,48 @@
+@font-face {
+  font-family: '#{map-get($icon, "font-family")}';
+  src: url('#{map-get($icon, "font-path")}/#{map-get($icon, "font-family")}.ttf?rqvi51') format('truetype'),
+  url('#{map-get($icon, "font-path")}/#{map-get($icon, "font-family")}.woff?rqvi51') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon"],
+[class*=" icon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{map-get($icon, "font-family")}' !important;
+  // speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconYoutube {
+  &:before {
+    content: map-get($icon, "youtube");
+  }
+}
+
+.iconInstagram {
+  &:before {
+    content: map-get($icon, "instagram");
+  }
+}
+
+.iconTwitter {
+  &:before {
+    content: map-get($icon, "twitter");
+  }
+}
+
+.iconFacebook {
+  &:before {
+    content: map-get($icon, "facebook");
+  }
+}

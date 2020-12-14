@@ -1,0 +1,60 @@
+.main-column {
+  margin: 96px 0;
+  @include maxCol();
+
+  a {
+    text-decoration: none;
+    color: color(darkColor);
+    border-bottom: 1px solid color(gray-300);
+    transition: all .3s;
+    &:hover {
+      border-bottom-color: color(darkColor);
+    }
+  }
+
+  figure {
+    margin: 0;
+    @include bp-up('md') {
+      margin-left:  calc( 0px - ( #{ $colMax } + #{ $gutter } ) );
+      margin-right: calc( 0px - ( #{ $colMax } + #{ $gutter } ) );
+    }
+    @include bp-up('md') {
+      margin-top: map-get($spaces, 'm');
+      margin-bottom: map-get($spaces, 'm');
+    }
+    
+  }
+
+  figcaption {
+    @include fluid-type($small);
+    color: color(gray-300);
+  }
+}
+
+.wp-block-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid color(gray-200);
+  @include fluid-type($small);
+
+  a:first-child {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: color(darkColor);
+    border: none;
+  }
+
+  &__button {
+    text-decoration: none;
+    background-color: color(darkColor);
+    color: color(lightColor);
+    padding: 4px 20px;
+    border-radius: 40px;
+  }
+}

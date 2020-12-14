@@ -1,0 +1,35 @@
+{
+  "name": "inte-gulp",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "node_modules/.bin/gulp watch",
+    "build": "node_modules/.bin/gulp build",
+    "vendor": "node_modules/.bin/gulp vendor"
+  },
+  "description": "Templates du conservatoire de Belfort.",
+  "license": "",
+  "author": "Xavier SENENTE",
+  "dependencies": {
+    "flickity": "^2.2.1",
+    "flickity-imagesloaded": "^2.0.0",
+    "gsap": "^3.4.2",
+    "headroom.js": "^0.11.0",
+    "rellax": "^1.12.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "del": "5.1.0",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "2.0.9",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.2",
+    "merge-stream": "2.0.0"
+  }
+}

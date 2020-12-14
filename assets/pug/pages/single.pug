@@ -1,0 +1,80 @@
+extends ../base.pug
+
+block vars
+  -var title     = "— Concert d'ouverture";
+  -var bodyClass = 'single';
+
+block main
+  // début de content.php
+  div.grid
+    +duotone("single-img.jpg", "crd")(class="single__img")
+    header.single__header
+      h1.single__title Concert d'ouverture Concert d'ouverture Concert d'ouverture
+      ul.infos
+        li.infos__row
+          span.infos__label Date
+          span.infos__value Jeudi 24 mars à 20h30
+        li.infos__row
+          span.infos__label Lieux
+          span.infos__value 
+            a.infos__link(href="#") Conservatoire Henri Dutilleux
+        li.infos__row
+          span.infos__label Catégorie
+          span.infos__value 
+            a.infos__link(href="#") Musique
+
+  p.single__excerpt Dans le cadre du Festival du film et forum international sur les droits humains (FIFDH) et en écho à Die Entführung aus dem Serail, Payot Genève organise une rencontre exceptionnelle avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.
+  // début contenu principal
+  div.main-column
+    p Dans le cadre du Festival du film et forum international sur les droits humains (FIFDH) et en écho à Die Entführung aus dem Serail, Payot Genève organise une rencontre exceptionnelle avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.
+    p Physicienne de formation, et à ce titre familière de Genève pour avoir travaillé au CERN, Aslı Erdoğan a milité pour la défense de ses pairs – à travers le « Comité des écrivains emprisonnés » du Pen Club International – de la minorité kurde (tout en se distanciant clairement des violences du PKK). Active dans la dénonciation des exactions du régime actuellement en place, elle est arrêtée en août 2016 à la suite de ce qu’Ankara considère comme un coup d’État manqué, et n’a dû finalement sa libération qu’à la pression internationale en sa faveur. À travers ses livres, dont Le silence même n’est plus à toi et Le bâtiment de pierre, elle analyse aussi bien les raisons politiques que sociales ou culturelles qui expliquent la lente mais opiniâtre dérive de la Turquie actuelle.
+    p La discussion avec Aslı Erdoğan sera animée par Isabelle Gattiker, directrice générale du FIFDH, et suivie d’une séance de signature.
+    p Dans le cadre du Festival du film et forum international sur les droits humains (FIFDH) et en écho à Die Entführung aus dem Serail, Payot Genève organise une rencontre exceptionnelle avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.
+    div.carousel
+      .carousel__item
+        img(src="img/agenda-musique-04.jpg", alt="musique")
+      .carousel__item
+        img(src="img/agenda-musique-05.jpg", alt="musique")
+      .carousel__item
+        img(src="img/agenda-musique-06.jpg", alt="musique")
+      .carousel__item
+        img(src="img/agenda-musique-07.jpg", alt="musique")
+      .carousel__item
+        img(src="img/agenda-musique-08.jpg", alt="musique")
+    p Physicienne de formation, et à ce titre familière de Genève pour avoir travaillé au CERN, Aslı Erdoğan a milité pour la défense de ses pairs – à travers le « Comité des écrivains emprisonnés » du Pen Club International – de la minorité kurde (tout en se distanciant clairement des violences du PKK). Active dans la dénonciation des exactions du régime actuellement en place, elle est arrêtée en août 2016 à la suite de ce qu’Ankara considère comme un coup d’État manqué, et n’a dû finalement sa libération qu’à la pression internationale en sa faveur. À travers ses livres, dont Le silence même n’est plus à toi et Le bâtiment de pierre, elle analyse aussi bien les raisons politiques que sociales ou culturelles qui expliquent la lente mais opiniâtre dérive de la Turquie actuelle.
+    p La discussion avec Aslı Erdoğan sera animée par Isabelle Gattiker, directrice générale du FIFDH, et suivie d’une séance de signature.
+  // fin contenu principal
+  // début évènements corrélés
+  aside.grid.-withHeader.section
+    header.section__header.-full
+      h2 Vous aimerez également
+    +card(
+      "agenda-musique.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.',
+      '/single.html'
+    )
+    +card(
+      "agenda-theatre.jpg",
+      "description image",
+      "Spectacle d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.',
+      '/single.html'
+    )
+    +card(
+      "agenda-danse.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.',
+      '/single.html'
+    )
+  // fin évènements corrélés
+  // début patterns
+  div.single__patterns.rellax(data-rellax-speed="-5")
+    include ../../img/pattern_curvesLines.svg
+  // fin patterns
+  // fin de content.php

@@ -1,0 +1,48 @@
+//- Image bi-ton
+mixin duotone(imgSrc, imgAlt)
+  .duotone(class!=attributes.class)
+    img(src=`img/${ imgSrc }`, alt=`${ imgAlt }`)
+
+mixin btn(btnHref, btnText)
+  a.btn(href=`${baseURL}${ btnHref }`, class!=attributes.class)
+    svg.btn__arrow(width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+      path(d='M23.354 12.354a.5.5 0 000-.708l-3.182-3.182a.5.5 0 10-.707.708L22.293 12l-2.828 2.828a.5.5 0 10.707.708l3.182-3.182zM0 12.5h23v-1H0v1z' fill='#1C1514')
+    = btnText
+
+//- Hero
+mixin hero(title, chapo, imgSrc, imgAlt)
+  // section hero
+  div.grid.-fullHeight.-withoutMargin.hero
+    header.hero__header
+      h1.hero__title= title
+    div.hero__chapo.chapo
+      p.chapo__text= chapo
+    +duotone(imgSrc, imgAlt)(class="hero__img")
+  // Fin section hero
+
+//- Blocs article
+mixin card(imgSrc, imgAlt, title, date, excerpt, link)
+  article.card
+    +duotone(imgSrc, imgAlt)(class="card__img")
+    h3.card__title
+      a.card__titleLink(href=`${ link }`)= title
+    div.card__caption
+      p.card__date= date
+      p.card__excerpt= excerpt
+      a.card__link.morelink(href=`${ link }`) Plus d'info
+
+//- Search result
+mixin searchResult(contentType, title, chapo, link)
+  article.searchResult
+    div.searchResult__type= contentType
+    h2.searchResult__title
+      a.searchResult__titleLink(href=`${ link }`)= title
+    p.searchResult__chapo= chapo
+    a.searchResult__link.morelink(href=`${ link }`) Plus d'info
+
+//- Blocs chiffres
+mixin stat(chiffre, label)
+  p.stat
+    span.stat__chiffre= chiffre
+    span.stat__text= label
+    

@@ -1,0 +1,42 @@
+extends ../base.pug
+
+block vars
+  -var title     = '— Inscription';
+  -var bodyClass = 'search';
+
+block main
+
+  +hero(
+    "Recherche",
+    "Résultats de la recherche pour : musique",
+    "agenda-musique-02.jpg",
+    "crd"
+  )
+
+  div.main-column
+    +searchResult(
+      'Agenda',
+      'Musique classique',
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste ifdoiugp oiudpfoigudspofigu.',
+      '#'
+    )
+    +searchResult(
+      'Agenda',
+      'Musique classique',
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste ifdoiugp oiudpfoigudspofigu.',
+      '#'
+    )
+    +searchResult(
+      'Agenda',
+      'Musique classique',
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste ifdoiugp oiudpfoigudspofigu.',
+      '#'
+    )
+    +searchResult(
+      'Agenda',
+      'Musique classique',
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste ifdoiugp oiudpfoigudspofigu.',
+      '#'
+    )
+
+

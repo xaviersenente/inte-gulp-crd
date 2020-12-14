@@ -1,0 +1,77 @@
+extends ../base.pug
+
+block vars
+  -var title     = '— Agenda';
+  -var bodyClass = 'page-agenda';
+  
+
+block main
+
+  +hero(
+    "Agenda",
+    "Lieu de création artistique, le conservatoire propose régulièrement des actions culturelles ouvertes à tous.",
+    "agenda-musique-09.jpg",
+    "Orchestre"
+  )
+
+  div.grid
+    +card(
+      "agenda-musique.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste Jean Touzot.',
+      '/single.html'
+    )
+    +card(
+      "agenda-theatre.jpg",
+      "description image",
+      "Spectacle d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste Jean Touzot.',
+      '/single.html'
+    )
+    +card(
+      "agenda-danse.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste Jean Touzot.',
+      '/single.html'
+    )
+    +card(
+      "agenda-musique.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste Jean Touzot.',
+      '/single.html'
+    )
+    +card(
+      "agenda-theatre.jpg",
+      "description image",
+      "Spectacle d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste Jean Touzot.',
+      '/single.html'
+    )
+    +card(
+      "agenda-danse.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste Jean Touzot.',
+      '/single.html'
+    )
+
+  nav.navigation.pagination
+    h2.screen-reader-text Navigation des articles
+    .nav-links
+      a.prev.page-numbers(href='') Précédent
+      span.page-numbers.current 1
+      a.page-numbers(href='') 2
+      a.page-numbers(href='') 3
+      a.next.page-numbers(href='') Suivant
+
+
+    

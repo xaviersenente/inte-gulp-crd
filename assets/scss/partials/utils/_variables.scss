@@ -1,0 +1,101 @@
+// Colors
+
+$colors: (
+  violet:     #1d096b,
+  vermillion: #feaa9b,
+  darkColor:  #1C1514,
+  gray-300:   #828282,
+  gray-200:   #CDC8C6,
+  gray-100:   #E9E7E4,
+  lightColor: #FAFAFA,
+  selection:  #caae7b,
+  bg-blend:   multiply,
+  fg-blend:   lighten
+);
+
+// Typographie
+
+$typo: (
+  mono: ('Space Mono', courier),
+  sans-serif: ('Mulish', Helvetica)
+);
+
+$icon: (
+  font-family: "icomoon",
+  font-path:   "../fonts",
+  youtube:     "\e903",
+  instagram:   "\e900",
+  twitter:     "\e901",
+  facebook:    "\e902"
+);
+
+$body: (
+  min : 13px,
+  max : 15px
+);
+
+$heading-1: (
+  min : 36px,
+  max : 64px
+);
+
+$heading-2: (
+  min : 28px,
+  max : 32px
+);
+
+$heading-3: (
+  min : 18px,
+  max : 24px
+);
+
+$excerpt: (
+  min : 22px,
+  max : 28px
+);
+
+$small: (
+  min : 11px,
+  max : 13px
+);
+
+$display-1: (
+  min : 48px,
+  max : 64px
+);
+
+// Espaces
+
+$spaces: (
+  s: 24px,
+  m: 48px,
+  l: 96px
+);
+
+// Responsive
+
+$breakpoints: (
+  sm : 640px,
+  md : 960px,
+  lg : 1296px
+);
+
+// Grille
+
+$container-margin: map-get($spaces, 's') !default;
+
+// Espace de gouttière
+$gutter: map-get($spaces, 'm');
+// Nombre de colonnes
+$nbCol: 12;
+// Largeur maximum de la page
+$container: map-get($breakpoints, 'lg') - $container-margin * 2;
+
+$colMin: 0;
+// Calcul pour la taille maximum d'une colonne de la grille
+$colMax: calc( ( #{ $container } - #{ $gutter } * ( #{ $nbCol } - 1 ) ) / #{ $nbCol } );
+
+
+// Largeur de la colonne principale
+$module: 6; // Nb de colonnes de la grille
+$widthMainColumn: calc( #{ $colMax } * #{ $module } + #{ $gutter } * ( #{ $module } - 1 ));

@@ -1,0 +1,41 @@
+.wpcf7 {
+  background-color: color(gray-100);
+  padding-top:50px;
+  padding-bottom: 50px;
+
+  input,
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid color(gray-200);
+    padding: pxToRem(10) 0;
+    width: 100%;
+  }
+
+  input:focus,
+  select:focus {
+    outline: 0;
+  }
+
+  label {
+    color: color(gray-300);
+    margin-top: 40px;
+    display: block;
+  }
+
+  ::-webkit-datetime-edit {
+    color: color(gray-300);
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    opacity: 0.2;
+  }
+
+  button {
+    margin-top: 40px;
+  }
+}
+
+

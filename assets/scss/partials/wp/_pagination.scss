@@ -1,0 +1,30 @@
+.screen-reader-text {
+  @include sr-only();
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: map-get( $spaces, 'm' );
+
+  .nav-links {
+    text-transform: uppercase;
+
+    .page-numbers {
+      display: inline-block;
+      text-decoration: none;
+      color: color(darkColor);
+      padding: 10px;
+      min-width: 45px;
+      height: 45px;
+      text-align: center;
+    }
+
+  
+    .current {
+      border: 1px solid color(gray-200);
+      border-radius: 50%;
+      
+    }
+  }
+}

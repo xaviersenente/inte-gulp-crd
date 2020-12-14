@@ -1,0 +1,33 @@
+-var baseURL = '/crd/';
+block vars
+
+include mixin.pug
+
+// début de header.php 
+
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    title Conservatoire Henri Dutilleux #{title}
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="Site du Conservatoire de Belfort")
+
+    link(rel="stylesheet", href="dist/css/style.css")
+    script(src="dist/js/vendors.js")
+
+  body(class=`${bodyClass}`)
+    button.btnGrid Afficher la grille
+    include includes/header.pug
+    main
+      // fin de header.php 
+
+      block main
+      
+      // début de footer.php 
+
+    include includes/footer.pug
+
+    script(src="dist/js/scripts.js")
+
+// fin de footer.php 

@@ -1,0 +1,58 @@
+$colMin: 0;
+// Calcul pour la taille maximum d'une colonne de la grille
+$colMax: calc( ( #{ $container } - #{ $gutter } * ( #{ $nbCol } - 1 ) ) / #{ $nbCol } );
+
+.grid {
+
+  margin-top: pxToRem(96);
+  margin-bottom: pxToRem(96);
+
+  padding-right: $container-margin;
+  padding-left: $container-margin;
+
+  @include bp-up('md') {
+    display: grid;
+		grid-gap: $gutter;
+
+    // grid-auto-flow indique le fonctionnement de l'algorithme de placement automatique et
+		// détaille comment les éléments placés automatiquement « coulent » dans la grille.
+		// Avec la valeur "dense" l'algorithme utilisera une méthode de « regroupement dense »
+    // où il essaie de remplir les trous dans la grille si des éléments plus petits arrivent ensuite.
+    
+    grid: auto-flow dense / repeat( $nbCol, minmax( $colMin, $colMax ) );
+    
+		// Permet de centrer la grille dans la largeur de la page
+		justify-content: center;	
+  }
+
+  &.-withHeader {
+    @include bp-up('md') {
+      &::before {
+        content: "";
+        grid-column: 1 / span 2;
+        background-color: color(darkColor);
+        height: 1px;
+        margin-top: pxToRem(54);
+      }
+    }
+  }
+
+  &.-withoutMargin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.-fullHeight {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    grid-row-gap: $gutter;
+    @include bp-up('sm') {
+      grid-template-rows: 3fr 1fr;
+    }
+  }
+
+  &.-inverse::before {
+    background-color: color(lightColor);
+  }
+}

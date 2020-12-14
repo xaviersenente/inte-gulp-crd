@@ -1,0 +1,92 @@
+extends ../base.pug
+
+block vars
+  -var title     = '';
+  -var bodyClass = 'home';
+
+block main
+
+  // section hero
+  div.grid.-fullHeight.-withoutMargin.hero
+    header.hero__header
+      h1.hero__title Conservatoire Henri Dutilleux
+      h3.hero__subTitle Conservatoire à rayonnement départemental du grand Belfort
+    div.hero__chapo.chapo.-col3
+      h3.chapo__title
+        a.chapo__link(href=`${baseURL}`)
+          include ../../img/Icon_musique.svg
+          | Musique
+      h3.chapo__title
+        a.chapo__link(href=`${baseURL}`)
+          include ../../img/Icon_theatre.svg
+          | Théâtre
+      h3.chapo__title
+        a.chapo__link(href=`${baseURL}`)
+          include ../../img/Icon_danse.svg
+          | Danse
+    +duotone("agenda-musique-06.jpg", "violoncelles")(class="hero__img")
+    div.hero__patterns.rellax(data-rellax-speed="-5")
+      include ../../img/pattern_curvesLines.svg
+  // Fin section hero
+
+  // section Conservatoire
+  section.grid.crd
+    div.crd__img
+      img(src="img/crd-int-01.jpg" alt="Salle de musique du conservatoire")
+    header.crd__header
+      h2.crd__title Découvrez le Conservatoire, <strong>ses enseignements</strong>, ses équipes dans un nouveau lieu dédié à la culture artistique.
+      +btn("conservatoire.html", "Plus d'info")(class="crd__link")
+
+    div.crd__stats
+      +stat("9", "sites")
+      +stat("84", "enseignants")
+      +stat("1500", "élèves")
+      +stat("50", "disciplines")
+    div.crd__bg
+      
+  // Fin section Conservatoire
+
+  // section Agenda
+  section.grid.-withHeader.section
+    header.section__header
+      h2.section__title Agenda
+      p.section__intro Lieu de création artistique, le conservatoire propose régulièrement des actions culturelles ouvertes à tous.
+    +btn("agenda.html", "Tous les évènements")(class="section__link")
+
+    //- div.section__cards
+    +card(
+      "agenda-musique.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.',
+      'single.html'
+    )
+    +card(
+      "agenda-theatre.jpg",
+      "description image",
+      "Spectacle d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.',
+      'single.html'
+    )
+    +card(
+      "agenda-danse.jpg",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Aslı Erdoğan.',
+      'single.html'
+    )
+
+  // Fin section Agenda
+
+  // section inscriptions
+  section.grid.-withHeader.-inverse.-withoutMargin.section.-bg
+    header.section__header.-inverse
+      h2.section__title Inscriptions
+      p.section__intro Vous êtes désireux d'entrer au conservatoire ? Vous trouverez ici toutes les informations sur les les modalités d'inscriptions.
+    +btn("inscription.html", "S'inscrire")(class="-outlined section__link")
+    +duotone("crd-ext-01.jpg", "facade Est du conservatoire")(class="section__img")
+  // Fin section inscriptions
+

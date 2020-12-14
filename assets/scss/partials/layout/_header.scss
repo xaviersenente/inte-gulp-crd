@@ -1,0 +1,73 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 80px;
+  z-index: 10;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0 24px;
+  transition: all .4s ease;
+
+  &.headroom--not-top {
+    background-color: white;
+  }
+
+  @include bp-up('md') {
+    background-color: white;
+    padding-right: 0;
+  }
+}
+
+.header__start {
+  display: flex;
+  align-items: center;
+}
+
+.header__end {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include bp-up('md') {
+    flex-direction: row;
+  }
+}
+
+.header__search {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: inherit;
+  width: 80px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  .headroom--top & {
+    svg circle,
+    svg path {
+      stroke: color(lightColor);
+      @include bp-up('md') {
+        stroke: color(darkColor);
+      }
+    }
+  }
+}
+
+.header__logo {
+  position: relative;
+  z-index: 20;
+  .style-svg {
+    width: 50px;
+    height: 50px;
+    display: block;
+
+    @include bp-up('md') {
+      border: 1px solid color(darkColor);
+    }
+  }
+}

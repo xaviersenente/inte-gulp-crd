@@ -1,0 +1,149 @@
+.hero {
+  position: relative;
+}
+
+.hero__header {
+  grid-row: 1 / span 1;
+  grid-column: 1;
+  z-index: 1;
+  align-self: flex-end;
+  color: color(lightColor);
+
+  @include bp-up('sm') {
+    grid-column: 1 / span 9;
+  }
+}
+
+.hero__subTitle {
+  text-transform: uppercase;
+  letter-spacing: pxToRem(1);
+  @include fluid-type($small);
+}
+
+.hero__img,
+.hero__map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero__map { 
+  height: 100%;
+}
+
+.hero__patterns {
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+  @include align(start, flex-end);
+
+  svg {
+    margin-right: -5vw;
+    margin-top: 15vh;
+    width: 80vmax;    
+
+    @include bp-up('sm') {
+      margin-top: 0;
+    }
+  }
+}
+
+.curveLines path {
+  stroke: color(vermillion);
+  fill: none;
+  stroke-linejoin: round;
+  stroke-width: 24px;
+}
+
+.hero__chapo {
+  position: relative;
+  background-color: color(lightColor);
+  grid-row: 2 / span 1;
+  grid-column: 1;
+  padding: 0 $gutter/2;
+  margin-left: -24px;
+  margin-right: -24px;
+
+  @include bp-up('sm') {
+    margin: 0;
+    padding: 0;
+    grid-column: 1 / span 9;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      margin-left: -100%;
+      background-color: color(lightColor);
+    }
+  }
+
+}
+
+.chapo {
+  align-items: center;
+  display: grid;
+
+  &.-col3 {
+    grid-gap: $gutter/2;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include bp-up('sm') {
+    grid-gap: $gutter;
+  }
+
+  
+}
+
+.chapo__title {
+  @include fluid-type($excerpt);
+  line-height: 1.5;
+
+  @include bp-up('md') {
+    @include fluid-type($heading-2);
+    line-height: 1.1;
+  }
+
+  font-family: map-get($typo, "mono"),
+  monospace;
+  font-weight: normal;
+}
+
+.chapo__link {
+  color: color(darkColor);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include bp-up('sm') {
+    flex-direction: row;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.chapo__text {
+  @include fluid-type($excerpt);
+  line-height: 1.5;
+  @include bp-up('sm') {
+    margin-right: map-get($spaces, 'm');
+  }
+}
+
+.hero__map.map {
+  height: 100%;
+}

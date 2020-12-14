@@ -1,0 +1,80 @@
+extends ../base.pug
+
+block vars
+  -var title     = '— Inscription';
+  -var bodyClass = 'page';
+
+block main
+
+  +hero(
+    "Inscription",
+    "Les inscriptions sont ouvertes à partir de la journée portes ouvertes (mi-mai) jusqu'au 15 septembre.",
+    "agenda-musique-02.jpg",
+    "crd"
+  )
+
+  div.main-column
+    h3 Musique
+    ul
+      li Jardin musique et danse : à partir de 4 ans
+      li Eveil musical : avoir 6 ans et être inscrit en CP à la rentrée de septembre. 45 min par semaine
+      li Instrument : à partir de 7 ans (dans l’année civile). 30 min de cours individuel d’instrument + 1h15 de formation musicale + 45 min de chorale par semaine
+      li Chant et chant musiques actuelles : à partir de 15 ans sur test d’entrée en septembre
+    h3 Danse contemporaine
+    ul
+      li Jardin musique et danse : à partir de 4 ans
+      li Eveil artistique (5 ans) et initiation (6 ans) : 1 cours d’1h par semaine
+      li A partir de 8 ans : 2 cours de danse d’1h par semaine + 1 cours de formation musicale d’1h par semaine
+    h3 Théâtre
+    ul
+      li Eveil (8-11 ans) : Renseignements et inscriptions au théâtre Granit
+      li A partir de 12 ans : inscriptions au conservatoire
+      li De 12 à 14 ans : 1 cours de 2h par semaine
+      li A partir de 15 ans et en fonction de la pratique théâtrale antérieure : 1 cours de 3h par semaine.
+    div.wp-block-file 
+      a(href="") Livret d’information du conservatoire
+      a.wp-block-file__button(href="") Télécharger
+
+    div.wp-block-file 
+      a(href="") Demande de location d’instrument
+      a.wp-block-file__button(href="") Télécharger
+
+  div.wpcf7(role='form' lang='fr-FR' dir='ltr')
+    form.main-column(action='#' method='post')
+      h2 Pré-inscription
+      p Pré-inscriptions au Conservatoire à Rayonnement Départemental de Belfort pour l'année scolaire 2020-2021
+      p
+        label Prénom
+          br
+          input(type='text' name='first-name' value='' size='40')
+      p
+        label Nom
+          br
+          input(type='text' name='last-name' value='' size='40')
+      p
+        label Email
+          br
+          input(type='email' name='email' value='' size='40')
+      p
+        label Date de naissance
+          br
+          input(type='date' name='birthday' value='')
+      p
+        label Adresse
+          br
+          input(type='text' name='address' value='' size='40')
+      p
+        label Établissement scolaire et classe à la rentrée
+          br
+          input(type='text' name='school' value='' size='40')
+      p
+        label Activité souhaitée
+          br
+          select(name='activity')
+            option(value) ---
+            option(value='musique') musique
+            option(value='danse') danse
+            option(value='théâtre') théâtre
+      p
+        button.btn.-dark(type='submit') Se pré-inscrire
+

@@ -1,0 +1,40 @@
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.duotone {
+  background-color: color(vermillion);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  img {
+    filter: grayscale(100%);
+    flex: 1 0 100%;
+    mix-blend-mode: color(bg-blend);
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+  }
+
+  // Corrige un bug sur Safari
+  &.single__img,
+  &.single__img img {
+    align-self: flex-start; 
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: color(violet);
+    mix-blend-mode: color(fg-blend);
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,160 @@
+.section {
+  position: relative;
+
+  &.-bg {
+    padding-top: pxToRem(160);
+    padding-bottom: pxToRem(160);
+  }
+
+}
+
+.section__header {
+  @include bp-up('md') {
+    grid-column: 3 / span 6;
+    &.-full {
+      grid-column: 3 / span 10;
+    }
+  }
+
+  &.-inverse {
+    color: color(lightColor);
+  }
+}
+
+.section__title {
+  @include fluid-type($heading-1);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.section__intro {
+  @include fluid-type($excerpt);
+  line-height: 1.5;
+}
+
+.section__link {
+
+  @include bp-up('md') {
+    grid-column: 9 / span 4;
+    justify-self: end;
+    align-self: flex-start;
+  }
+}
+
+.section__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  object-fit: cover;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: color(violet);
+    opacity: 0.5;
+  }
+}
+
+
+.crd {
+  margin: 80px 0;
+
+  @include bp-up('sm') {
+    margin: 200px 0;
+  }
+}
+
+.crd::before {
+  content: "";
+  grid-column: 1 / span 7;
+  grid-row: 2 / span 1;
+  margin-bottom: -40px;
+  margin-right: -40px;
+  z-index: -1;
+  background-color: color(vermillion);
+}
+
+.crd__img {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 100%;
+  }
+
+  @include bp-up('sm') {
+    grid-column: 1 / span 7;
+    grid-row: 1 / span 2;
+  }
+
+  @include bp-up('md') {
+    margin-left: -24px;
+  }
+
+  @include bp-up('lg') {
+    margin-left: calc((#{ $container } - 100vw )/ 2);
+  }
+  
+}
+
+.crd__header {
+  grid-column: 6 / span 5;
+  grid-row: 1 / span 1;
+  z-index: 2;
+  padding: 80px 0 104px;
+} 
+
+.crd__title {
+  @include fluid-type($excerpt);
+  line-height: 1.5;
+  font-family: map-get($typo, "mono"), monospace;
+  font-style: italic;
+  strong {
+    font-weight: normal;
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: pxToRem(15);
+      background-color: color(vermillion);
+    }
+  }
+}
+
+.crd__bg {
+  background: color(lightColor) url(../img/pattern.svg) no-repeat;
+  background-position: center right;
+  grid-column: 5 / span 7;
+  grid-row: 1 / span 1;
+  z-index: 1;
+}
+
+.crd__stats {
+  grid-column: 9 / span 4;
+  grid-row: 2 / span 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $gutter;
+}
+
+.stat__chiffre {
+  @include fluid-type($display-1);
+  line-height: 1.1;
+  color: color(vermillion);
+  display: block;
+}

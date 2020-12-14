@@ -1,0 +1,70 @@
+
+.submenu__list {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: height .5s ease-in-out;
+  margin-left: pxToRem(16);
+  @extend %unstyled;
+
+  @include bp-up('md') {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    height: auto;
+    background-color: color(lightColor);
+    display: none;
+    z-index: 20;
+    padding: 8px 0;
+    margin-left: 0;
+  }
+}
+
+
+.submenu__item {
+  margin-top: pxToRem(8);
+  opacity: 0.5;
+  @include bp-up('md') {
+    padding: 8px 0;
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.menu__item.-hasDropdown {
+  /**
+  * Solution to remove/ignore :hover css style on touch devices
+  */
+  @media (hover: hover) {
+    &:hover {
+      .submenu__list {
+        display: block;
+        height: auto;
+      }
+    }
+  }
+
+  &.-hasDropdown > .menu__link {
+    padding-right: 36px;
+
+    &::after {
+      border: 2px solid color(lightColor);
+      border-right: 0;
+      border-top: 0;
+      content: " ";
+      display: block;
+      height: 8px;
+      width: 8px;
+      pointer-events: none;
+      position: absolute;
+      right: 16px;
+      transform: rotate(-45deg);
+      transform-origin: center;
+
+      @include bp-up('md') {
+        border-color: color(darkColor);
+      }
+    }
+  }
+}

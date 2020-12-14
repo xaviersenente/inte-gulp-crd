@@ -1,0 +1,75 @@
+:root {
+  @each $name,
+  $color in $colors {
+    --#{$name}: #{$color};
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: color(vermillion);
+}
+
+::selection {
+  background: color(vermillion);
+}
+
+
+body {
+  font-family: map-get($typo, "sans-serif"), sans-serif;
+  @include fluid-type($body);
+  line-height: 1.6;
+  background-color: color(lightColor);
+}
+
+// Bug IOS
+// => L'overflow doit être appliqué sur l'élément body ET html
+// pour faire disparaître le scroll sur safari IOS
+
+.noscroll,
+.noscroll body {
+  overflow: hidden;
+}
+
+// Typographie 
+
+h1,
+h2 {
+  font-family: map-get($typo, "mono"), monospace;
+  font-weight: normal;
+}
+
+h1, .h1 {
+  @include fluid-type($heading-1);
+  line-height: 1.1;
+}
+
+h2, .h2 {
+  @include fluid-type($heading-2);
+  line-height: 1.1;
+}
+
+h3, .h3 {
+  @include fluid-type($heading-3);
+  line-height: 1.4;
+}
+
+.listUnstyled {
+  @extend %unstyled;
+}
+
+.sr-only {
+  @include sr-only();
+}
+
+.admin-bar {
+  margin-top: 32px;
+  .header {
+    top: 32px;
+  }
+}

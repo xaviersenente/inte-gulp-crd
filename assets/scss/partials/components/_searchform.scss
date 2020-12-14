@@ -1,0 +1,86 @@
+.searchForm {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  background: white;
+  transform: translateY(-80px);
+  transition: all .4s ease-in-out;
+
+  @include bp-up('md') {
+    left: 100px;
+  }
+
+  &.-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.searchForm__close,
+.searchForm__input,
+.searchForm__submit { 
+  -webkit-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchForm__close {
+  cursor: pointer;
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px;
+  height: 80px;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.searchForm__submit {
+  position: absolute;
+  top: 0; right: 50px; 
+  width: 80px;
+  height: 80px;
+
+  @include bp-up('md') {
+    right: 100px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.searchForm__form {
+  height: 100%;
+}
+.searchForm__input {
+  @include fluid-type($heading-3);
+  height: 100%;
+  width: 80%;
+  padding: 0 40px;
+}
+
+
+.searchFormPage__input {
+  -webkit-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid color(gray-200);
+  @include fluid-type($heading-3);
+  padding: map-get($spaces, 's');
+  width: 100%;
+  margin-bottom: map-get($spaces, 's');
+  &:focus {
+    outline: none;
+  }
+}

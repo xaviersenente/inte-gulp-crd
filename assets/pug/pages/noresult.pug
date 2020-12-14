@@ -1,0 +1,23 @@
+extends ../base.pug
+
+block vars
+  -var title     = '— Inscription';
+  -var bodyClass = 'page';
+
+block main
+
+  +hero(
+    "Recherche",
+    "Résultats de la recherche pour : tototo",
+    "agenda-musique-02.jpg",
+    "crd"
+  )
+
+  div.main-column
+    h2 Rien n'a été trouvé
+    p Désolé, mais rien ne correspond à vos termes de recherche. Veuillez réessayer avec d'autres mots-clés.
+    div.searchFormPage
+      form(action='#' method='get')
+        label.sr-only(for='searchForm') Rechercher
+        input(class="searchFormPage__input" type='search' name='s' placeholder='Rechercher…' value='')
+        button(class="searchFormPage__submit btn -dark" type='submit') Rechercher

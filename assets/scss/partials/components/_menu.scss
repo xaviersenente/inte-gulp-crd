@@ -1,0 +1,155 @@
+.menu {
+  display: flex;
+  @include fluid-type($small);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: pxToRem(1);
+
+  @include bp-down('sm') {
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: color(violet);
+    @include fluid-type($excerpt);
+    line-height: 1.5;
+    font-weight: 300;
+    text-transform: inherit;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.menu.-open {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu__list {
+  @extend %unstyled;
+  margin-top: 25vh;
+  margin-left: 10vw;
+
+  @include bp-up('md') {
+    display: flex;
+    margin: 0;
+  }
+}
+
+.menu__item {
+  position: relative;
+  margin-top: pxToRem(8);
+
+  @include bp-up('md') {
+    display: flex;
+    align-items: stretch;
+    margin-top: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      background-color: color(darkColor);
+      transition: height .3s ease;
+    }
+
+    &:hover::before {
+      height: 5px;
+    }
+  }
+
+  &.-btn {
+    @include bp-up('md') {
+      background-color: color(darkColor);
+      margin-left: 24px;
+    }
+  }
+}
+
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  color: color(lightColor);
+  text-decoration: none;
+
+  @include bp-up('md') {
+    color: color(darkColor);
+  }
+
+  .-btn & {
+    color: color(lightColor);
+    @include bp-up('md') {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  
+}
+
+
+// Icon Hamburger
+
+.menuBurger {
+  position: relative;
+  width: 30px;
+  // height: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  appearance: none;
+  outline: none;
+  @include align(center, center);
+
+  @include bp-up('md') {
+    display: none;
+  }
+}
+
+.menuBurger__bar {
+  content: '';
+  background: color(lightColor);
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  border-radius: 2px;
+  left: 0;
+  z-index: 10;
+  transition: all .4s ease-in-out;
+
+  .headroom--not-top & {
+    background: color(darkColor);
+  }
+
+  .menuBurger.-open & {
+    transform: rotate(135deg);
+    background: color(lightColor);
+  }
+}
+
+.menuBurger__bar::before,
+.menuBurger__bar::after {
+  @extend .menuBurger__bar;
+
+  .menuBurger.-open & {
+    top: 0;
+    transform: rotate(90deg);
+  }
+}
+
+.menuBurger__bar:before {
+  top: -10px;
+}
+
+.menuBurger__bar:after {
+  top: 10px;
+}

@@ -1,0 +1,94 @@
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: bold;
+  
+  padding: 16px 24px;
+  border: 1px solid color(vermillion);
+  color: color(DarkColor);
+  @include fluid-type($small);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease-in-out;
+
+  @include bp-up('sm') {
+    padding: 24px 32px;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 8px color(vermillion);
+  }
+
+  &.-outlined {
+    border-color: color(lightColor);
+    color: color(lightColor);
+
+    &:hover {
+      box-shadow: inset 0 0 0 8px color(lightColor);
+    }
+  }
+
+  &.-dark {
+    border-color: color(darkColor);
+    background-color: color(darkColor);
+    color: color(lightColor);
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.btn__arrow {
+  margin-right: 16px;
+
+  .-outlined & {
+    path {
+      fill: color(lightColor);
+    }
+  }
+}
+
+.morelink {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: color(darkColor);
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: color(darkColor);
+  }
+
+  &::before {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: all .3s ease-in-out;
+  }
+
+  &::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all .3s ease-in-out .1s;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(0);
+    }
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
