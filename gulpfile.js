@@ -2,18 +2,18 @@
 
 // Load plugins
 const autoprefixer = require("gulp-autoprefixer");      // Pour prefixer les CSS
-const browsersync = require("browser-sync").create();   // Pour actualiser automatiquement le navigateur. (Live reload)
-const cleanCSS = require("gulp-clean-css");             // Pour minifier les CSS
-const del = require("del");                             // Pour effacer les fichiers et dossiers
-const gulp = require("gulp");
-const header = require("gulp-header");
-const concat = require('gulp-concat');
-const merge = require("merge-stream");                  // Pour fusionner un groupe de flux.
-const plumber = require("gulp-plumber");                // Pour empêcher la rupture des pipe causée par des erreurs de plugins Gulp
-const pug = require('gulp-pug');                        // Pour utiliser PUG
-const rename = require("gulp-rename");                  // Pour renommer fichiers et dossiers
-const sass = require("gulp-sass");                      // Pour l'utilisation de SASS
-const uglify = require("gulp-uglify");                  // Pour minifier Javascript
+const browsersync  = require("browser-sync").create();  // Pour actualiser automatiquement le navigateur. (Live reload)
+const cleanCSS     = require("gulp-clean-css");         // Pour minifier les CSS
+const del          = require("del");                    // Pour effacer les fichiers et dossiers
+const gulp         = require("gulp");
+const header       = require("gulp-header");            // Pour ajouter une en-tête de fichier
+const concat       = require('gulp-concat');            // Pour concaténer les fichiers
+const merge        = require("merge-stream");           // Pour fusionner un groupe de flux.
+const plumber      = require("gulp-plumber");           // Pour empêcher la rupture des pipe causée par des erreurs de plugins Gulp
+const pug          = require('gulp-pug');               // Pour utiliser PUG
+const rename       = require("gulp-rename");            // Pour renommer fichiers et dossiers
+const sass         = require("gulp-sass");              // Pour l'utilisation de SASS
+const uglify       = require("gulp-uglify");            // Pour minifier Javascript
 const htmlbeautify = require('gulp-html-beautify');
 
 // Load package.json for banner
@@ -140,8 +140,8 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(html, css, js));
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+const build  = gulp.series(vendor, gulp.parallel(html, css, js));
+const watch  = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.html = html;
